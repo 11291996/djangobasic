@@ -1,0 +1,37 @@
+<h1>Using the url tag</h2>
+<ul>
+    <li>
+        <!--hard coded this will be so long if the web goes complicated-->
+        <a href="/route/second">
+        hard-coded</a> (not DRY)
+    </li>
+    <li>
+        <!--this will make urls like an object, much simpler-->
+        {% url 'route:first-view' %}
+        (url 'route:first-view')
+    </li>
+        <!--url object used as a hyperlink-->
+    <li>
+        <a href="{% url 'route:second-view' %}">
+        url 'route:second-view'</a>
+    </li>
+    <li>
+        <!--url object for another application
+        called reversing-->
+        {% url 'gview:cats' %}
+        (url 'gview:cats') from gview/urls.py
+    </li>
+        <!--parameter applied reversing-->
+    <li>
+        {% url 'gview:cat' 42 %}
+        (url 'gview:cat' 42) from gview/urls.py
+    </li>
+        <!--current page's reversing-->
+    <li>
+        {% url 'nsroute:second-view' %}
+        (url 'nsroute:second-view') from dj4e-samples/urls.py
+    </li>
+</ul>
+<p>
+<a href="https://docs.djangoproject.com/en/3.0/ref/templates/builtins/#url" target="_blank">Documentation</a>
+</p>
