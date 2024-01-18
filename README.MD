@@ -86,7 +86,8 @@ python manage.py migrate
 ```
 -> creates table structure with django's for actual database
 
-go to setting.py to control which database to create also which database to connect if it already exists
+go to setting.py to control which database to create it 
+also which database to connect if it already exists
 
 ```bash
 python manage.py dbshell 
