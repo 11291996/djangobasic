@@ -9,7 +9,7 @@ django-admin startproject projectname
 ```
 
 the basic structure would be 
-```python
+```markdown
 mysite/
     manage.py -> command line utility and controlled also with Admin API 
     mysite/
@@ -18,8 +18,8 @@ mysite/
         urls.py -> URL dispatcher in Web Server, part of controller in Web Server
         asgi.py -> manages ASGI web requests
         wsgi.py -> manages WSGI web requests
-```
-setting.py can manage incoming clients -> see mysite setting.py
+
+setting.py can manage incoming clients -> see mysite's setting.py
 also time zone is managed in this file
 
 python manage.py shell -> connect manage.py to shell
@@ -78,3 +78,4 @@ second project folder's urls.py sets the paths via django.urls's function called
 then http request can access the applications and its views.py
 
 basic usage of view.py is shown in dj4e's views application's views.py
+```
