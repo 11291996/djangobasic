@@ -4,7 +4,8 @@
 
 make project by 
 
-"""django-admin startproject projectname"""
+```bash
+django-admin startproject projectname```
 
 the basic structure would be 
 
