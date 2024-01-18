@@ -18,31 +18,44 @@ mysite/
         urls.py -> URL dispatcher in Web Server, part of controller in Web Server
         asgi.py -> manages ASGI web requests
         wsgi.py -> manages WSGI web requests
+```
 
 setting.py can manage incoming clients -> see mysite's setting.py
 also time zone is managed in this file
-
-python manage.py shell -> connect manage.py to shell
+```bash
+python manage.py shell 
+```
+-> connect manage.py to shell
 
 starting the server 
-python manage.py check -> trying deploying without acutally deploying it
+```bash
+python manage.py check 
+```
+-> trying deploying without acutally deploying it
+```bash
 python manage.py runserver ip -> select ip default is localhost
+```
 
-Creating a database
+## Creating a database
 
 select a query package, create a database in the upper mysite folder
 
-python manage.py createsuperuser -> creates an access to manage the project via Admin API 
+```bash
+python manage.py createsuperuser 
+```
+-> creates an access to manage the project via Admin API 
 
-App -> an application for the web, it can be copied into many webs
-Project -> collections of different apps
+## App -> an application for the web, it can be copied into many webs
+## Project -> collections of different apps
 
 create an app
 
+```bash
 python manage.py startapp appname
+```
 
 the basic app structure would be 
-
+```markdown
 appname/
     __init__.py
     admin.py -> used for registering the Django models into the Django administration
@@ -52,18 +65,30 @@ appname/
     models.py -> does object relational mapping in Web Server #polls models.py
     tests.py -> tests the application 
     views.py -> can be both controller and view 
+```
 
 one can create urls.py in apps
 
 Object relational mapping in django
-
-python manage.py makemigration (appname) -> creates table structure for django
-python manage.py sqlmigrate (appname) (migration number) -> shows SQL command in the migrations 
+```bash
+python manage.py makemigration (appname) 
+```
+-> creates table structure for django
+```bash
+python manage.py sqlmigrate (appname) (migration number) 
+```
+-> shows SQL command in the migrations 
 this is for frequent updates on models in django
-python manage.py migrate -> creates table structure with django's for actual database
-go to setting.py to control which database to create also which database to connect if it already exists
+```bash
+python manage.py migrate 
+```
+-> creates table structure with django's for actual database
 
-python manage.py dbshell -> checks connectivity
+go to setting.py to control which database to create also which database to connect if it already exists
+```bash
+python manage.py dbshell 
+```
+-> checks connectivity
 
 After these are set one can get http request from clients 
 
@@ -78,4 +103,3 @@ second project folder's urls.py sets the paths via django.urls's function called
 then http request can access the applications and its views.py
 
 basic usage of view.py is shown in dj4e's views application's views.py
-```
