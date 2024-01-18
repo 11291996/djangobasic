@@ -43,7 +43,7 @@ python manage.py runserver ip
 ```
 -> select ip default is localhost
 
-App -> an application for the web, it can be copied into many webs
+App -> an application for the web, it can be copied into many webs \
 Project -> collections of different apps
 
 ## create an app
