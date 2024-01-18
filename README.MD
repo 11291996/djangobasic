@@ -2,7 +2,7 @@
 
 ## make project 
 
-after setting the environment 
+After setting the environment 
 
 ```bash
 django-admin startproject projectname
@@ -43,8 +43,8 @@ python manage.py runserver ip
 ```
 -> select ip default is localhost
 
-### App -> an application for the web, it can be copied into many webs
-### Project -> collections of different apps
+App -> an application for the web, it can be copied into many webs
+Project -> collections of different apps
 
 ## create an app
 
