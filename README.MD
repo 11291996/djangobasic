@@ -1,8 +1,8 @@
 # Django basic
 
-after setting the environment 
+## make project 
 
-make project by 
+after setting the environment 
 
 ```bash
 django-admin startproject projectname
@@ -22,12 +22,18 @@ mysite/
 
 setting.py can manage incoming clients -> see mysite's setting.py
 also time zone is managed in this file
+
+```bash
+python manage.py createsuperuser 
+```
+-> creates an access to manage the project via Admin API 
+
 ```bash
 python manage.py shell 
 ```
 -> connect manage.py to shell
 
-starting the server 
+## starting the server 
 ```bash
 python manage.py check 
 ```
@@ -36,15 +42,6 @@ python manage.py check
 python manage.py runserver ip 
 ```
 -> select ip default is localhost
-
-## creating a database
-
-select a query package, create a database in the upper mysite folder
-
-```bash
-python manage.py createsuperuser 
-```
--> creates an access to manage the project via Admin API 
 
 ### App -> an application for the web, it can be copied into many webs
 ### Project -> collections of different apps
@@ -70,6 +67,10 @@ appname/
 
 one can create urls.py in apps
 
+## creating a database
+
+select a query package, create a database in the upper mysite folder
+
 object relational mapping in django
 ```bash
 python manage.py makemigration (appname) 
@@ -86,12 +87,13 @@ python manage.py migrate
 -> creates table structure with django's for actual database
 
 go to setting.py to control which database to create also which database to connect if it already exists
+
 ```bash
 python manage.py dbshell 
 ```
 -> checks connectivity
 
-After these are set one can get http request from clients 
+### After these are set one can get http request from clients 
 
 Django creates python objects from http request via class called HttpRequest
 then the controller designed for the project returns an object from a class called HttpResponse
