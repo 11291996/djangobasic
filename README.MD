@@ -1,8 +1,10 @@
-after setting the environment 
+# Django basic
+
+## after setting the environment 
 
 make project by 
 
-django-admin startproject projectname
+"""django-admin startproject projectname"""
 
 the basic structure would be 
 
