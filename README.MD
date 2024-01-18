@@ -9,7 +9,7 @@ django-admin startproject projectname
 ```
 
 the basic structure would be 
-
+```python
 mysite/
     manage.py -> command line utility and controlled also with Admin API 
     mysite/
@@ -18,7 +18,7 @@ mysite/
         urls.py -> URL dispatcher in Web Server, part of controller in Web Server
         asgi.py -> manages ASGI web requests
         wsgi.py -> manages WSGI web requests
-
+```
 setting.py can manage incoming clients -> see mysite setting.py
 also time zone is managed in this file
 
