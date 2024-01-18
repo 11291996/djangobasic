@@ -33,10 +33,11 @@ python manage.py check
 ```
 -> trying deploying without acutally deploying it
 ```bash
-python manage.py runserver ip -> select ip default is localhost
+python manage.py runserver ip 
 ```
+-> select ip default is localhost
 
-## Creating a database
+## creating a database
 
 select a query package, create a database in the upper mysite folder
 
@@ -45,10 +46,10 @@ python manage.py createsuperuser
 ```
 -> creates an access to manage the project via Admin API 
 
-## App -> an application for the web, it can be copied into many webs
-## Project -> collections of different apps
+### App -> an application for the web, it can be copied into many webs
+### Project -> collections of different apps
 
-create an app
+## create an app
 
 ```bash
 python manage.py startapp appname
@@ -69,7 +70,7 @@ appname/
 
 one can create urls.py in apps
 
-Object relational mapping in django
+object relational mapping in django
 ```bash
 python manage.py makemigration (appname) 
 ```
