@@ -1,11 +1,12 @@
 # Django basic
 
-## after setting the environment 
+after setting the environment 
 
 make project by 
 
 ```bash
-django-admin startproject projectname```
+django-admin startproject projectname
+```
 
 the basic structure would be 
 
