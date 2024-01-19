@@ -60,7 +60,7 @@ appname/
     apps.py -> application configuration
     migrations/
         __init__.py
-    models.py -> does object relational mapping in Web Server #polls models.py
+    models.py -> does object relational mapping in Web Server #my site poll's models.py
     tests.py -> tests the application 
     views.py -> can be both controller and view 
 ```
