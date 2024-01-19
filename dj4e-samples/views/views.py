@@ -12,10 +12,11 @@ def funky(request):
     https://github.com/csev/dj4e-samples</a></p>
     </body></html>"""
     return HttpResponse(response)
-#uses 'guess' data from the resquest and return response 
+#uses 'guess' data from the resquest and return response
+#this kind of parameter is called a query, key, or value parameter
 def danger(request) :
     response = """<html><body>
-    <p>Your guess was """+request.GET['guess']+"""</p>
+    <p>Your guess was """+request.GET['guess']+"""</p> 
     </body></html>"""
     return HttpResponse(response)
 #uses 'guess' data but uses escape function manipulates the data disabling code generation
@@ -24,7 +25,8 @@ def game(request) :
     <p>Your guess was """+escape(request.GET['guess'])+"""</p>
     </body></html>"""
     return HttpResponse(response)
-#this code gets data from urls.py itself. this is a parameter based view
+#this code gets data from urls.py itself. 
+#this kind of parameter is called a path parameter
 def rest(request, guess) :
     response = """<html><body>
     <p>Your guess was """+escape(guess)+"""</p>
@@ -36,7 +38,7 @@ def rest(request, guess) :
 def bounce(request) :
     return HttpResponseRedirect('https://www.dj4e.com/simple.htm')
 
-# https://docs.djangoproject.com/en/3.0/topics/class-based-views/
+#https://docs.djangoproject.com/en/3.0/topics/class-based-views/
 #main is a class based view now oop can be applied for views
 class MainView(View) :
     def get(self, request):
@@ -49,7 +51,7 @@ class MainView(View) :
 #parameters on class
 class RestMainView(View) :
     def get(self, request, guess):
-        print("We got a slug from the URL",guess);
+        print("We got a slug from the URL", guess)
         response = """<html><body>
         <p>Your guess was """+escape(guess)+"""</p>
         </body></html>"""
