@@ -23,5 +23,6 @@ urlpatterns = [
     #slug takes strings consisting of ASCII letters or numbers, plus the hyphen and underscore characters.
     #uuid takes Universally Unique Identifier -> id created by the system
     #path takes any non empty string including slashes
+    #header takes authentication token
 ]
 
