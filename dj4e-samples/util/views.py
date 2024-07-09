@@ -10,4 +10,3 @@ def guess(request) :
         return HttpResponse('Yay!');
 
     return HttpResponse('Try adding ?guess=nn to the url');
-

@@ -24,13 +24,13 @@ def loop(request) :
 def cond(request) :
     x = {'guess' : '42' }
     return render(request, 'tmpl/cond.html', x)
-#object oriented templat language
+#object oriented template language
 def nested(request) :
     x = {'outer' : { 'inner' : '42' } }
     return render(request, 'tmpl/nested.html', x)
     
 # Call this with a parameter number
-# guess can be controlled by request
+#guess can be controlled by request
 class GameView(View) :
     def get(self, request, guess) :
         x = {'guess' : int(guess) }
