@@ -37,6 +37,7 @@ class GameView(View) :
         return render(request, 'tmpl/cond.html', x)
 
 # Using inheritance (extend)
+#does the same as the original cond template 
 class Game2View(View) :
     def get(self, request, guess) :
         x = {'guess' : int(guess) }

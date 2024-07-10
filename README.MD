@@ -106,6 +106,6 @@ second project folder's urls.py sets the paths via django.urls's function called
 
 then http request can access the applications and its views.py
 
-basic usage of view.py is shown in dj4e's views application's views.py
+basic usage of view is shown in dj4e's views application
 
 basic usage of template is shown in dj4e's tmpl application
