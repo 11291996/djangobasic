@@ -109,3 +109,5 @@ then http request can access the applications and its views.py
 basic usage of view is shown in dj4e's views application
 
 basic usage of template is shown in dj4e's tmpl application
+
+basic URL mapping is shown in dj4e's route application 
