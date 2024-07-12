@@ -1,9 +1,12 @@
 <h1>Cat List</h1>
 <p>
+<!--getting a data structure of cat name list--> 
 {% if cat_list %}
 <ul>
+  <!--iterating URL mapping-->
   {% for cat in cat_list %}
     <li>
+      <!--using the data structure with URL mapping-->
       <a href="{% url 'gview:cat' cat.id %}">{{ cat.name }}</a>
     </li>
   {% endfor %}

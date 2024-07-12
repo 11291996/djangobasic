@@ -12,9 +12,9 @@ app_name = 'gview'
 # Note use of plural for list view and singular for detail view
 urlpatterns = [
     path('', TemplateView.as_view(template_name='gview/main.html')),
-    path('cats', views.CatListView.as_view(), name='cats'),
+    path('cats', views.CatListView.as_view(), name='cats'), #using the class based view
     path('cat/<int:pk_from_url>', views.CatDetailView.as_view(), name='cat'),
-    path('dogs', views.DogListView.as_view(), name='dogs'),
+    path('dogs', views.DogListView.as_view(), name='dogs'), 
     path('dog/<int:pk>', views.DogDetailView.as_view(), name='dog'),
     path('horses', views.HorseListView.as_view(), name='horses'),
     path('horse/<int:pk>', views.HorseDetailView.as_view(), name='horse'),

@@ -4,6 +4,7 @@ from django.views import View
 # Create your views here.
 
 def simple(request):
+    #render function renders the html file
     return render(request, 'tmpl/simple.html')
 #applying template language
 def guess(request) :

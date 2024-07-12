@@ -5,6 +5,7 @@ from django.shortcuts import render
 
 # Create your views here.
 
+#simple class based view
 class CatListView(View):
     def get(self, request) :
         stuff = Cat.objects.all()
@@ -18,6 +19,7 @@ class CatDetailView(View):
         return render(request, 'gview/cat_detail.html', cntx)
 
 # Lets apply the "DRY" pattern - "Don't Repeat Yourself"
+#this is a reusable class based view
 class DogListView(View):
     model = Dog
     def get(self, request) :
@@ -38,9 +40,11 @@ class DogDetailView(View):
 # https://docs.djangoproject.com/en/3.0/topics/class-based-views/generic-display/
 from django.views import generic
 
+#using built in generic views for lists
 class HorseListView(generic.ListView):
     model = Horse
 
+#same but for detail view
 class HorseDetailView(generic.DetailView):
     model = Horse
 

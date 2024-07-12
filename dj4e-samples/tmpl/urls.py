@@ -13,6 +13,5 @@ urlpatterns = [
     path('nested', views.nested),
     path('game/<slug:guess>', views.GameView.as_view()),
     path('game2/<slug:guess>', views.Game2View.as_view()),
-
 ]
 
