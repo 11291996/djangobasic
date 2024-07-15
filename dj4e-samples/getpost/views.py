@@ -6,6 +6,9 @@ from django.views import View
 
 # Call as dumpdata('GET', request.GET)
 
+#utility function to dump data
+#used in the functions below
+#connects html form with django's library
 def dumpdata(place, data) :
     retval = ""
     if len(data) > 0 :
@@ -15,6 +18,7 @@ def dumpdata(place, data) :
         retval += '</p>\n'
     return retval
 
+#get data from the form
 def getform(request):
     response = """<p>Impossible GET guessing game...</p>
         <form>
@@ -26,6 +30,7 @@ def getform(request):
     response += dumpdata('GET', request.GET)
     return HttpResponse(response)
 
+#free from Cross Site Request Forgery(CSRF) check
 @csrf_exempt
 def postform(request):
     response = """<p>Impossible POST guessing game...</p>
@@ -38,15 +43,18 @@ def postform(request):
     response += dumpdata('POST', request.POST)
     return HttpResponse(response)
 
+#post for html4
 @csrf_exempt
 def html4(request):
     dump = dumpdata('POST', request.POST)
     return render(request, 'getpost/html4.html', {'data' : dump })
 
+#post for html5
 @csrf_exempt
 def html5(request):
     dump = dumpdata('POST', request.POST)
     return render(request, 'getpost/html5.html', {'data' : dump })
+
 
 def failform(request):
     response = """<p>CSRF Fail guessing game...</p>

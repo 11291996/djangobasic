@@ -113,3 +113,5 @@ basic usage of template is shown in dj4e's tmpl application
 basic URL mapping is shown in dj4e's route application 
 
 basic generic view is shown in dj4e's gview
+
+basic form usage is shown in dj4e's getpost
