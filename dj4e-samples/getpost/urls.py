@@ -12,7 +12,7 @@ urlpatterns = [
     path('failform', views.failform, name='failform'),
     path('csrfform', views.csrfform, name='csrfform'),
     path('guess', views.guess, name='guess'),
-    path('classy', views.ClassyView.as_view(), name='classy'),
+    path('classy', views.ClassyView.as_view(), name='classy'), #get and post done in one class view
     path('bounce', views.bounce, name='bounce'),
     path('awesome', views.AwesomeView.as_view(), name='awesome'),
 ]

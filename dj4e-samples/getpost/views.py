@@ -30,7 +30,9 @@ def getform(request):
     response += dumpdata('GET', request.GET)
     return HttpResponse(response)
 
-#free from Cross Site Request Forgery(CSRF) check
+#Cross Site Request Forgery(CSRF) - a fake page stealing personal information with a similar form
+#CSRF defense - a hidden field in the client(from db to maybe browers) with a token that is checked on the server
+#free from CSRF check
 @csrf_exempt
 def postform(request):
     response = """<p>Impossible POST guessing game...</p>
@@ -55,7 +57,7 @@ def html5(request):
     dump = dumpdata('POST', request.POST)
     return render(request, 'getpost/html5.html', {'data' : dump })
 
-
+#this view does not use a template with csrf token so it will fail
 def failform(request):
     response = """<p>CSRF Fail guessing game...</p>
         <form method="post">
@@ -69,6 +71,7 @@ def failform(request):
 
 from django.middleware.csrf import get_token
 
+#csrf token added to the html form, so it will work
 def csrfform(request):
     response = """<p>CSRF Success guessing game...</p>
         <form method="POST">
@@ -79,7 +82,7 @@ def csrfform(request):
         <input type="submit"/>
         </form>"""
 
-    token = get_token(request)
+    token = get_token(request) #this can extract the token from the request
     response = response.replace('__token__', html.escape(token))
     response += dumpdata('POST', request.POST)
     return HttpResponse(response)
@@ -99,11 +102,13 @@ def checkguess(guess) :
             msg = 'Bad format for guess:' + html.escape(guess)
     return msg
 
+#view with URL Mapping with CSRF token
 def guess(request):
     guess = request.POST.get('guess')
     msg = checkguess(guess)
     return render(request, 'getpost/guess.html', {'message' : msg })
 
+#using class based views
 class ClassyView(View) :
     def get(self, request):
         return render(request, 'getpost/guess.html')
@@ -117,6 +122,12 @@ class ClassyView(View) :
 def bounce(request) :
     return HttpResponseRedirect('https://www.dj4e.com/simple.htm')
 
+#when a browser is refreshed, it will resend the last POST
+#this is a problem if the POST was a purchase or a vote
+#so the browser takes over and pops up a warning
+#this is not good for the user experience
+#so use a redirect after a post
+#this class implements the redirect
 class AwesomeView(View) :
     def get(self, request):
         msg = request.session.get('msg', False)
@@ -127,7 +138,7 @@ class AwesomeView(View) :
         guess = request.POST.get('guess')
         msg = checkguess(guess)
         request.session['msg'] = msg
-        return redirect(request.path)
+        return redirect(request.path) #redirects to the same page
 
 
 # References

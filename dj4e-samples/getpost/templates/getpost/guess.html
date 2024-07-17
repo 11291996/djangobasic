@@ -4,6 +4,7 @@
 {% endif %}
 <form method="post">
 <p><label for="guess">Input Guess</label>
+<!--this will connect Django's csrf function-->
 {% csrf_token %}
 <input type="text" name="guess" size="40" id="guess"/></p>
 <input type="submit"/>
