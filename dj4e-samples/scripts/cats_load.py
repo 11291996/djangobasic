@@ -2,6 +2,8 @@ import csv  # https://docs.python.org/3/library/csv.html
 
 # https://django-extensions.readthedocs.io/en/latest/runscript.html
 
+#install django-extensions and run the following command to run the script
+#the script will load the data from meow.csv to the database
 # python3 manage.py runscript cats_load
 
 from cats.models import Cat, Breed
