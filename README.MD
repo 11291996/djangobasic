@@ -119,3 +119,5 @@ basic form usage is shown in dj4e's getpost application
 basic cookie and session usage is shown in dj4e's session application
 
 basic model usage is shown in dj4e's bookone and scripts application
+
+basic 
