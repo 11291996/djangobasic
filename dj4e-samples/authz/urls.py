@@ -3,6 +3,7 @@ from . import views
 from django.views.generic import TemplateView
 
 app_name='authz'
+#adds views to the urls
 urlpatterns = [
     path('', TemplateView.as_view(template_name='authz/main.html')),
     path('open', views.OpenView.as_view(), name='open'),

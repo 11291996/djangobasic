@@ -23,8 +23,8 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('', include('home.urls')),  # Change to ads.urls
-    path('admin/', admin.site.urls),  # Keep
-    path('accounts/', include('django.contrib.auth.urls')),  # Keep
+    path('admin/', admin.site.urls),  # Keep #for superuser
+    path('accounts/', include('django.contrib.auth.urls')),  # Keep #for login and logout
     re_path(r'^oauth/', include('social_django.urls', namespace='social')),  # Keep
 
     # Sample applications

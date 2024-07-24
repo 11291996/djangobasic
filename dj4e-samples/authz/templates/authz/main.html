@@ -1,12 +1,14 @@
 <h1>Current request.path {{ request.path }}</h1>
 {% if user.is_authenticated %}
 <p>Authenticated as
+<!--URL Mapping of reversed log in data-->
 <pre>
 Name: {{ user.get_full_name }}
 Email: {{ user.email }}
 Id: {{ user.id }}
 </pre>
 </p>
+<!--set operation after login and log out-->
 <p>You can <a href="{% url 'logout' %}?next={% url 'authz:open' %}">Logout</a></p>
 {% else %}
 <p>You are not logged in</p>
