@@ -50,17 +50,17 @@ class Validate(DumpPostView):
             'mileage' : 42, 
             'purchase_date': '2018-08-14'
         }
-        form = BasicForm(initial=old_data)
+        form = BasicForm(initial=old_data) #using our form to validate data from get request
         ctx = {'form' : form}
         return render(request, 'form/form.html', ctx)
 
     def post(self, request) :
-        form = BasicForm(request.POST)
-        if not form.is_valid() :
-            ctx = {'form' : form}
+        form = BasicForm(request.POST) #using our form to send the data as a post request
+        if not form.is_valid() : #if the data is not valid
+            ctx = {'form' : form} #then we send the form back to the user
             return render(request, 'form/form.html', ctx)
         # If there are no errors, we would save the data
-        x = reverse('form:success')
+        x = reverse('form:success') #then we redirect to the success page
         return redirect(x)
 
 def success(request) :

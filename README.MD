@@ -121,3 +121,5 @@ basic cookie and session usage is shown in dj4e's session application
 basic model usage is shown in dj4e's bookone and scripts application
 
 basic login and logout is shown in dj4e's authz and home application
+
+more advanced form usage is shown in dj4e's form application
