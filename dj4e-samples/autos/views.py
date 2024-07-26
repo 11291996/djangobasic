@@ -18,7 +18,7 @@ class MainView(LoginRequiredMixin, View):
         ctx = {'make_count': mc, 'auto_list': al}
         return render(request, 'autos/auto_list.html', ctx)
 
-
+#adds elements in the page
 class MakeView(LoginRequiredMixin, View):
     def get(self, request):
         ml = Make.objects.all()
@@ -28,9 +28,11 @@ class MakeView(LoginRequiredMixin, View):
 
 # We use reverse_lazy() because we are in "constructor attribute" code
 # that is run before urls.py is completely loaded
+#adds views to the page
 class MakeCreate(LoginRequiredMixin, View):
     template = 'autos/make_form.html'
-    success_url = reverse_lazy('autos:all')
+    success_url = reverse_lazy('autos:all') #creates the url when the variable is used in other places
+    #reverse does it right away
 
     def get(self, request):
         form = MakeForm()
@@ -38,7 +40,7 @@ class MakeCreate(LoginRequiredMixin, View):
         return render(request, self.template, ctx)
 
     def post(self, request):
-        form = MakeForm(request.POST)
+        form = MakeForm(request.POST) #as it is inherited from ModelForm, it checks with the models
         if not form.is_valid():
             ctx = {'form': form}
             return render(request, self.template, ctx)
@@ -93,6 +95,8 @@ class MakeDelete(LoginRequiredMixin, View):
 # These views do not need a form because CreateView, etc.
 # Build a form object dynamically based on the fields
 # value in the constructor attributes
+
+#all built in views
 class AutoCreate(LoginRequiredMixin, CreateView):
     model = Auto
     fields = '__all__'

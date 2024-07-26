@@ -9,7 +9,7 @@ class Make(models.Model):
             validators=[MinLengthValidator(2, "Make must be greater than 1 character")]
     )
 
-    def __str__(self):
+    def __str__(self): #connecting with pyton str function
         """String for representing the Model object."""
         return self.name
 
@@ -21,7 +21,7 @@ class Auto(models.Model):
     )
     mileage = models.PositiveIntegerField()
     comments = models.CharField(max_length=300)
-    make = models.ForeignKey('Make', on_delete=models.CASCADE, null=False)
+    make = models.ForeignKey('Make', on_delete=models.CASCADE, null=False) #making a foreign key
 
     # Shows up in the admin list
     def __str__(self):
