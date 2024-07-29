@@ -1,7 +1,7 @@
 from myarts.models import Article
 from myarts.owner import OwnerListView, OwnerDetailView, OwnerCreateView, OwnerUpdateView, OwnerDeleteView
 
-
+#this is view is between the model and Django's view so that list can be owner specific
 class ArticleListView(OwnerListView):
     model = Article
     # By convention:

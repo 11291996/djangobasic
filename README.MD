@@ -125,3 +125,5 @@ basic login and logout is shown in dj4e's authz and home application
 more advanced form usage is shown in dj4e's form application
 
 login, page and list creation features using the whole backend are done in dj4e's autos application
+
+owned row usage is shown in dj4e's myarts application 
