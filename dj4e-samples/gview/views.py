@@ -41,6 +41,7 @@ class DogDetailView(View):
 from django.views import generic
 
 #using built in generic views for lists
+#come back after learning form usage
 class HorseListView(generic.ListView):
     model = Horse
 
@@ -72,17 +73,18 @@ class CarDetailView(DJ4EDetailView):
     model = Car
 
 # Lets explore how (badly) we can override some of what goes on...
+#overriding form usage
 class WackyEquinesView(generic.ListView):
     model = Car
     template_name = 'gview/wacky.html'  # Convention: gview/car_list.html
 
-    def get_queryset(self, **kwargs):
+    def get_queryset(self, **kwargs): #overriding the get_queryset method
         crazy = Horse.objects.all()    # Convention: Car
         print('CRAZY')
         return crazy
 
     # Add something to the context
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, **kwargs): #overriding the get_context_data method
         context = super().get_context_data(**kwargs)
         context['crazy_thing'] = 'CRAZY THING'
         return context
