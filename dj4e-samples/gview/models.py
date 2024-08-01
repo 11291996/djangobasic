@@ -5,6 +5,7 @@ from django.db import models
 from django.db import models
 
 class Cat(models.Model):
+    #creates a char field with a max length of 128 characters
     name = models.CharField(max_length=128)
 
 class Dog(models.Model):

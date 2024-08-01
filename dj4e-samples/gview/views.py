@@ -73,7 +73,7 @@ class CarDetailView(DJ4EDetailView):
     model = Car
 
 # Lets explore how (badly) we can override some of what goes on...
-#overriding form usage
+#overriding view usage
 class WackyEquinesView(generic.ListView):
     model = Car
     template_name = 'gview/wacky.html'  # Convention: gview/car_list.html

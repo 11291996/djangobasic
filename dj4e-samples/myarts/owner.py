@@ -3,7 +3,7 @@ from django.views.generic import CreateView, UpdateView, DeleteView, ListView, D
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-
+#customized views for the ownership of the data
 class OwnerListView(ListView):
     """
     Sub-class the ListView to pass the request to the form.
