@@ -6,10 +6,12 @@
 {% block content %}
 <p>
   <!-- see INSTALLED_APPS in dj4e-samples/settings.py -->
+  <!--crispy_forms is installed using pip-->
   {% load crispy_forms_tags %}
   <form action="" method="post">
     {% csrf_token %}
-    {{ form|crispy }}
+    {{ form|crispy }} <!--crispy form is being used, prettier-->
+    <!--view and form are the same-->
     <input type="submit" value="Submit">
     <input type="submit" 
        onclick="window.location='{% url 'crispy:main' %}'; return false;" value="Cancel">

@@ -8,6 +8,7 @@
   <form action="" method="post">
     {% csrf_token %}
     <table>
+    <!--the view will pass the form to the template-->
     {{ form.as_table }}
     </table>
     <input type="submit" value="Submit">
