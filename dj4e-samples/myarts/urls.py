@@ -2,6 +2,7 @@ from django.urls import path, reverse_lazy
 from . import views
 
 app_name='myarts'
+#django views are used to handle article creation, updation and deletion
 urlpatterns = [
     path('', views.ArticleListView.as_view(), name='all'),
     path('article/<int:pk>', views.ArticleDetailView.as_view(), name='article_detail'),

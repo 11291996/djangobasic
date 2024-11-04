@@ -7,7 +7,6 @@ class ArticleListView(OwnerListView):
     # By convention:
     # template_name = "myarts/article_list.html"
 
-
 class ArticleDetailView(OwnerDetailView):
     model = Article
 
