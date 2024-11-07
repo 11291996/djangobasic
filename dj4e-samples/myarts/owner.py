@@ -15,7 +15,7 @@ class OwnerDetailView(DetailView):
     Sub-class the DetailView to pass the request to the form.
     """
 
-
+#adds account checking and halts url guessing via LoginRequiredMixin and our CreateView
 class OwnerCreateView(LoginRequiredMixin, CreateView):
     """
     Sub-class of the CreateView to automatically pass the Request to the Form
@@ -40,7 +40,7 @@ class OwnerUpdateView(LoginRequiredMixin, UpdateView):
     def get_queryset(self):
         print('update get_queryset called')
         """ Limit a User to only modifying their own data. """
-        qs = super(OwnerUpdateView, self).get_queryset()
+        qs = super(OwnerUpdateView, self).get_queryset() #get former data before modification while protecting the data
         return qs.filter(owner=self.request.user)
 
 
@@ -52,7 +52,7 @@ class OwnerDeleteView(LoginRequiredMixin, DeleteView):
 
     def get_queryset(self):
         print('delete get_queryset called')
-        qs = super(OwnerDeleteView, self).get_queryset()
+        qs = super(OwnerDeleteView, self).get_queryset() #also deletion of data is protected
         return qs.filter(owner=self.request.user)
 
 # References
@@ -60,7 +60,5 @@ class OwnerDeleteView(LoginRequiredMixin, DeleteView):
 # https://docs.djangoproject.com/en/3.0/ref/class-based-views/mixins-editing/#django.views.generic.edit.ModelFormMixin.form_valid
 
 # https://stackoverflow.com/questions/862522/django-populate-user-id-when-saving-a-model
-
-# https://stackoverflow.com/a/15540149
 
 # https://stackoverflow.com/questions/5531258/example-of-django-class-based-deleteview

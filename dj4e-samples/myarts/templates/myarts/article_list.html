@@ -7,7 +7,7 @@
   {% for article in article_list %} <!--article_list is passed from the models-->
     <li>
         <a href="{% url 'myarts:article_detail'  article.id %}">{{ article.title }}</a>
-        {% if article.owner == user %}
+        {% if article.owner == user %} <!--does not show url if the url fails-->
         (<a href="{% url 'myarts:article_update' article.id %}">Edit</a> |
         <a href="{% url 'myarts:article_delete' article.id %}">Delete</a>)
         {% endif %}
