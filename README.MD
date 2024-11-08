@@ -129,3 +129,5 @@ login, page and list creation features using the whole backend are done in dj4e'
 owned row usage is shown in dj4e's myarts application 
 
 basic crispy form usage is shown in dj4e's crispy application
+
+basic menu usage is shown in dj4e's menu application
