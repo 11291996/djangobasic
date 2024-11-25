@@ -1,5 +1,6 @@
 from django.db import models
 
+#basic one to many models
 class Lang(models.Model):
     name = models.CharField(max_length=200) #simple model
 
