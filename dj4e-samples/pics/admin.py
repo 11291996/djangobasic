@@ -8,8 +8,7 @@ from pics.models import Pic
 
 # Define the PicAdmin class
 class PicAdmin(admin.ModelAdmin):
-    exclude = ('picture', 'content_type')
-
+    exclude = ('picture', 'content_type') #these will not show up in the admin UI
 
 # Register the admin class with the associated model
 admin.site.register(Pic, PicAdmin)

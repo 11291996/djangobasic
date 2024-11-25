@@ -19,7 +19,7 @@ class PicDetailView(OwnerDetailView):
     model = Pic
     template_name = "pics/detail.html"
 
-
+#creates html from models and forms
 class PicCreateView(LoginRequiredMixin, View):
     template_name = 'pics/form.html'
     success_url = reverse_lazy('pics:all')
@@ -42,7 +42,7 @@ class PicCreateView(LoginRequiredMixin, View):
         pic.save()
         return redirect(self.success_url)
 
-
+#this view updates the pic
 class PicUpdateView(LoginRequiredMixin, View):
     template_name = 'pics/form.html'
     success_url = reverse_lazy('pics:all')

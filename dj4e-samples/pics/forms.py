@@ -6,8 +6,8 @@ from pics.humanize import naturalsize
 
 # Create the form class.
 class CreateForm(forms.ModelForm):
-    max_upload_limit = 2 * 1024 * 1024
-    max_upload_limit_text = naturalsize(max_upload_limit)
+    max_upload_limit = 2 * 1024 * 1024 #2Mb
+    max_upload_limit_text = naturalsize(max_upload_limit) #sets the text limit according to the max_upload_limit
 
     # Call this 'picture' so it gets copied from the form to the in-memory model
     # It will not be the "bytes", it will be the "InMemoryUploadedFile"
@@ -21,7 +21,7 @@ class CreateForm(forms.ModelForm):
         fields = ['title', 'text', 'picture']  # Picture is manual
 
     # Validate the size of the picture
-    def clean(self):
+    def clean(self): #built-in function that validates the form or model
         cleaned_data = super().clean()
         pic = cleaned_data.get('picture')
         if pic is None:

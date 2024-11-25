@@ -8,11 +8,15 @@ class Pic(models.Model):
             max_length=200,
             validators=[MinLengthValidator(2, "Title must be greater than 2 characters")]
     )
+    #description of the picture
     text = models.TextField()
+    #implements the login system
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
     # Picture
-    picture = models.BinaryField(null=True, blank=True, editable=True)
+    #the actual image file
+    picture = models.BinaryField(null=True, blank=True, editable=True) 
+    #the header of the image file for the browser to know how to display it
     content_type = models.CharField(max_length=256, null=True, blank=True, 
                                     help_text='The MIMEType of the file')
 

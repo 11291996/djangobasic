@@ -131,3 +131,5 @@ owned row usage is shown in dj4e's myarts application
 basic crispy form usage is shown in dj4e's crispy application
 
 basic menu usage is shown in dj4e's menu application
+
+basic image data usage is shown in dj4e's pics application
