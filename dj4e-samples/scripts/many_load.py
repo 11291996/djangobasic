@@ -6,7 +6,8 @@ import csv  # https://docs.python.org/3/library/csv.html
 
 from many.models import Person, Course, Membership
 
-
+#this function is for many to many relationship
+#the function name has to be "run" according to Django
 def run():
     fhand = open('many/load.csv')
     reader = csv.reader(fhand)
@@ -21,6 +22,7 @@ def run():
     # jane@tsugi.org,I,Python
     # ed@tsugi.org,L,Python
 
+    #add the data to the models
     for row in reader:
         print(row)
 

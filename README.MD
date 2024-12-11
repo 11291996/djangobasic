@@ -134,4 +134,4 @@ basic menu usage is shown in dj4e's menu application
 
 basic image data usage is shown in dj4e's pics application
 
-basic many to many is shown in dj4e's bookmany application
+basic many to many is shown in dj4e's bookmany, many, and script application
