@@ -17,4 +17,4 @@ class Instance(models.Model):
     due_back = models.DateField(null=True, blank=True)
 
 #the migrations will link the models to the database
-#one can also use the Django shell to use the function and instances above and add data to the database
+#one can also use Django shell to use the function and instances above and add data to the database
