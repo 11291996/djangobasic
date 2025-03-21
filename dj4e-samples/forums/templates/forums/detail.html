@@ -4,6 +4,7 @@
 <h1>
 {% if forum.owner == user %}
 <span style="float: right;">
+<!--adds buttons-->
 <a href="{% url 'forums:forum_update' forum.id %}"><i class="fa fa-pencil"></i></a>
 <a href="{% url 'forums:forum_delete' forum.id %}"><i class="fa fa-trash"></i></a>
 </span>
@@ -23,11 +24,13 @@
 <form method="post" action="{% url 'forums:forum_comment_create' forum.id %}">
     {% csrf_token %}
     {{ comment_form|crispy }}
+<!--adds buttons-->
 <input type="submit" value="Submit">
 <input type="submit" value="All Forums" onclick="window.location.href='{% url 'forums:all' %}';return false;">
 </form>
 </p>
 {% endif %}
+<!--sorts the comments via added time-->
 {% for comment in comments %}
 <p> {{ comment.text }} 
 ({{ comment.updated_at|naturaltime }})
